@@ -1,0 +1,14 @@
+{
+  "name": "codosos",
+  "version": "0.1.0",
+  "description": "codosos: a small kit of must-have agent skills (bro, tldr, handoff, next-steps)",
+  "author": { "name": "theo" },
+  "license": "MIT",
+  "keywords": ["skills", "tldr", "handoff", "summaries", "workflows"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "codosos",
+    "shortDescription": "A small kit of must-have agent skills",
+    "category": "Developer Tools"
+  }
+}

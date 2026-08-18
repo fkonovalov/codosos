@@ -1,0 +1,13 @@
+{
+  "name": "codosos",
+  "version": "0.1.0",
+  "description": "codosos: a small kit of must-have agent skills (bro, tldr, handoff, next-steps)",
+  "license": "MIT",
+  "author": { "name": "theo" },
+  "skills": [
+    "./skills/bro",
+    "./skills/tldr",
+    "./skills/handoff",
+    "./skills/next-steps"
+  ]
+}
