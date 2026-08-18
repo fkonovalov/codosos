@@ -6,14 +6,45 @@ format (Codex CLI, Cursor, OpenCode, and others) via `npx skills`.
 
 ## Skills
 
-| Skill | What it does |
-|---|---|
-| `bro` | Restates the last message in plain human language, no jargon. Manual only: `/bro`. |
-| `tldr` | Compresses a wall of text into a tight summary. |
-| `handoff` | Saves a handoff document to `<repo>/.handoffs/` so a fresh session can pick up the work. Manual only: `/handoff`. |
-| `next-steps` | Reads the latest handoff and lists concrete next actions. |
+### /bro
 
-`handoff` and `next-steps` are a pair: one writes, the other reads.
+The agent answered in dense jargon. `/bro` makes it say the same thing like a human.
+
+**Example:**
+
+> **Agent:** The latency regression correlates with N+1 query amplification in the ORM layer.
+>
+> **You:** `/bro`
+>
+> **Agent:** The page is slow because we hit the database once per item instead of once for all of them.
+
+### /tldr
+
+Too long, didn't read. `/tldr` compresses the agent's last wall of text (or anything you point it at) into something you can read in 15 seconds.
+
+**Example:**
+
+> **Agent:** *(40 lines about a failed deploy)*
+>
+> **You:** `/tldr`
+>
+> **Agent:** Deploy failed on migration 042. Already rolled back, prod is fine. Fix: rename the index, re-run.
+
+### /handoff
+
+Done for today? `/handoff` saves everything the next session needs into `<repo>/.handoffs/`: state, decisions, next steps. Close the laptop.
+
+### /next-steps
+
+Fresh session, zero context. `/next-steps` reads the latest handoff and tells you what to do now. A short numbered list, no recap.
+
+**Example:**
+
+> **You:** `/next-steps`
+>
+> **Agent:** 1. Finish retry logic in `api/client.ts` 2. Fix flaky `auth.test.ts` 3. Open PR against `release/2.4`
+
+`handoff` writes, `next-steps` reads: together your work survives the context window.
 
 ## Install
 
